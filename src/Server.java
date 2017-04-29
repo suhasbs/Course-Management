@@ -12,32 +12,40 @@ import com.firebase.client.*;
 import static java.lang.System.exit;
 import static java.lang.Thread.sleep;
 import java.util.concurrent.atomic.AtomicBoolean;
-
-class User {
-    private int birthYear;
-    private String fullName;
-    public User() {}
-    public User(String fullName, int birthYear) {
-        this.fullName = fullName;
-        this.birthYear = birthYear;
-    }
-    public long getBirthYear() {
-        return birthYear;
-    }
-    public String getFullName() {
-        return fullName;
-    }
-}
+import DatabaseClasses.User;
+//class User {
+//    private int birthYear;
+//    private String fullName;
+//    public User() {}
+//    public User(String fullName, int birthYear) {
+//        this.fullName = fullName;
+//        this.birthYear = birthYear;
+//    }
+//    public long getBirthYear() {
+//        return birthYear;
+//    }
+//    public String getFullName() {
+//        return fullName;
+//    }
+//}
 
 
 public class Server {
 
-//  public static void main(String args[]) throws Exception {
-//
-//    String url = "https://course-management-3edd4.firebaseio.com/";
-//    Firebase dataRef = new Firebase(url);
-//    Firebase alanRef = dataRef.child("users").child("alanisawesome");
-//    User alan = new User("Suhassla", 2017);
+  public static void main(String args[]) throws Exception {
+
+    String url = "https://course-management-3edd4.firebaseio.com/";
+    Firebase dataRef = new Firebase(url);
+    Firebase newUser = dataRef.child("Users");
+    User st = new User();
+    st.setUserName("Aditya A");
+    st.setPassword("AA_15it201");
+    st.setAccountType(1);
+    newUser.push().setValue(st);
+    while(true)
+    {
+        
+    }
 ////    alanRef.push().setValue(alan);
 //    final AtomicBoolean done = new AtomicBoolean(false);
 ////    alanRef.push().setValue(alan, new Firebase.CompletionListener() {
@@ -117,5 +125,5 @@ public class Server {
 //    
 //    //System.out.println("Data Added");
 //  
-//   }
+  }
 }

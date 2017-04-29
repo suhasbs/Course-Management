@@ -19,25 +19,40 @@ public class Student {
     String regNumber;
     
     ArrayList<String> coursesTaken;
-    HashMap<Course,Float> attendance;
+    //HashMap<Course,Float> attendance;
     public Student()
     {
         
     }
     
+    public Student(String name, String reg)
+    {
+        studentName = name;
+        regNumber = reg;
+    }
     public String getStudentName()
     {
         return studentName;
     }
-    
+    public void setStudentName(String name)
+    {
+        studentName = name;
+    }
     public String getRegNumber()
     {
         return regNumber;
     }
-    
+    public void setRegNo(String regNo)
+    {
+        regNumber = regNo;
+    }
     public ArrayList<String> getCoursesTaken()
     {
         return coursesTaken;
+    }
+    public void setCoursesTaken(ArrayList<String> c)
+    {
+        coursesTaken = c;
     }
     
     //To add students to database and retrieve
@@ -50,7 +65,7 @@ public class Student {
         Student s = new Student();
         s.studentName = "Aditya A";
         s.regNumber = "15IT201";
-        s.coursesTaken = new ArrayList();
+        s.coursesTaken = new ArrayList();   
         s.coursesTaken.add("DAA");
         s.coursesTaken.add("Unix");
         s.coursesTaken.add(null);

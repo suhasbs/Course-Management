@@ -5,6 +5,8 @@
  */
 package DatabaseClasses;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Suhas
@@ -12,7 +14,51 @@ package DatabaseClasses;
 public class Faculty {
     
     String facultyName;
+    String designation;
     //Branch branch;
-   //ArrayList<Course> coursesHandled
-    
+   ArrayList<Course> coursesHandled;
+
+   public Faculty()
+   {
+       coursesHandled = new ArrayList();
+         
+   }
+   
+   
+   public Faculty(String name, String desig, ArrayList<Course> c)
+   {
+       facultyName = name;
+       designation = desig;
+       coursesHandled = c;
+   }
+   
+   public void setFacultyName(String name)
+   {
+       facultyName= name;
+   }
+   
+   public String getFacultyName()
+   {
+       return facultyName;
+   }
+   public void setDesignation(String des)
+   {
+       designation = des;
+   }
+   
+   public String getDesignation()
+   {
+       return designation;
+   }
+   
+   public void setCoursesHandled(ArrayList<Course> courses)
+   {
+       coursesHandled = courses;
+   }
+   public ArrayList<Course> getCoursesHandled()
+   {
+       return coursesHandled;
+   }
+   
 }
+
